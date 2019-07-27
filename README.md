@@ -7,9 +7,15 @@ This project demonstrates:
 2. Building the above for the Raspberry Pi on a different (preferably faster) platform
    such as x86 64-bit Ubuntu with Bazel using https://github.com/mjbots/rpi_bazel
 
-# ... But building for the Raspberry Pi doesn't work
+# Building for the Raspberry Pi doesn't work
 
-This repo was created so the community can get this working for the greater good.
+This repository was created so the community can help me and the greater good build
+my project for the Raspberry Pi.
+
+# Why Bazel?
+
+Multi-platform C++ projects are common but are notoriously difficult to build. Bazel can fix this
+by making it easy for C++ developers to integrate Boost b2, CMake, and toolchain ecosystems.
 
 # If you don't want to install gcc
 
@@ -20,7 +26,7 @@ installed, you need to tell Bazel to use clang.
 export CC=/usr/bin/clang
 ```
 
-# Creating the executable
+# Creating the test executable
 
 The executable will be located in bazel-bin/test/test
 
@@ -28,9 +34,10 @@ The executable will be located in bazel-bin/test/test
 ```bash
 bazel build test
 ```
+
 ## For Raspberry Pi
 This doesn't work yet!
 
 ```bash
-bazel build --compiler=clang --cpu=pi test
+bazel build --cpu=pi test
 ```

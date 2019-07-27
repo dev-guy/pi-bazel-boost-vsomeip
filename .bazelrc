@@ -1,9 +1,5 @@
-# import tools/bazel.rc
+import tools/bazel.rc
 
 startup 
 
-# build --cxxopt='-std=c++11' --compiler=clang
-# test  --cxxopt='-std=c++11' --compiler=clang
-
-build --cxxopt='-std=c++11'
-test  --cxxopt='-std=c++11'
+build --cxxopt='-std=c++11' --compiler=clang
