@@ -12,7 +12,7 @@ This repository was created in the hope that the community can lift this boulder
 1. Boost shared libraries are successfully created for the host operating system but fails to create shared libraries for the Raspberry Pi
 2. CMake projects don't work when building for either the host or the Raspberry Pi
 
-## Issues
+# Related GitHub Issues
 
 1. https://github.com/bazelbuild/rules_foreign_cc/issues/297
 2. https://github.com/mjbots/rpi_bazel/issues/3
