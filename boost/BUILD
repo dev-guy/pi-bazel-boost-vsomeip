@@ -28,7 +28,7 @@ boost_build(
         # "variant=debug",
         "-d0",  # Minimal output
         "-j1",  # Build with this number of processes
-        # "--with-log",
+        "--with-log",
     ],
     visibility = ["//visibility:public"],
 )
