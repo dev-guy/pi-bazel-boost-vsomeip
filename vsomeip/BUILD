@@ -7,7 +7,7 @@ cmake_external(
     cache_entries = {
         "BOOST_ROOT": "$EXT_BUILD_DEPS/boost/",
         "BOOST_INCLUDEDIR": "$EXT_BUILD_DEPS/boost/include",
-        "MAKEFLAGS": "-j5",
+        "MAKEFLAGS": "-j1",  # Build with this number of processes
         # "ENABLE_SIGNAL_HANDLING": "1"
     },
     lib_source = "@vsomeip//:all",

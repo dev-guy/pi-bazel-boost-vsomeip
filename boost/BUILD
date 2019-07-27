@@ -5,13 +5,12 @@ load("@rules_foreign_cc//tools/build_defs:boost_build.bzl", "boost_build")
 
 boost_build(
     name = "log",
-    #bootstrap_options = [
-    #    "--with-toolset=clang",
-    #    "--without-libraries=python",
-    #],
+    bootstrap_options = [
+        "--with-toolset=clang",  # This should be passed down by Bazel but is needed
+        "--without-libraries=python",
+    ],
     lib_source = "@boost//:all",
     shared_libraries = [
-        # Linux
         "libboost_atomic.so.1.65.0",
         "libboost_chrono.so.1.65.0",
         "libboost_date_time.so.1.65.0",
@@ -21,28 +20,15 @@ boost_build(
         "libboost_regex.so.1.65.0",
         "libboost_system.so.1.65.0",
         "libboost_thread.so.1.65.0",
-        # OSX
-        # "libboost_atomic.dylib",
-        # "libboost_chrono.dylib",
-        # "libboost_date_time.dylib",
-        # "libboost_filesystem.dylib",
-        # "libboost_log.dylib",
-        # "libboost_log_setup.dylib",
-        # "libboost_regex.dylib",
-        # "libboost_system.dylib",
-        # "libboost_thread.dylib",
     ],
     user_options = [
         "threading=multi",
         "link=shared",
-        "cxxflags=-std=c++11",
-        # "toolset=clang-arm",
-        # "toolset=armv7-linux-gnueabihf",
-        # "toolset=arm-linux-gnueabihf",
+        "cxxflags=-std=c++11",  # Is this passed down by Bazel already?
         # "variant=debug",
         "-d0",  # Minimal output
-        "-j5",  # Build with parallel processes
-        "--with-log",
+        "-j1",  # Build with this number of processes
+        # "--with-log",
     ],
     visibility = ["//visibility:public"],
 )
