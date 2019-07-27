@@ -5,18 +5,19 @@ This project demonstrates:
 1. Building Boost (1.65) shared libraries, Google Test, and a CMake-based library (GENIVI/vsomeip) with Bazel using https://github.com/bazelbuild/rules_foreign_cc 
 2. Building the above for the Raspberry Pi on a different (preferably faster) platform such as x86 64-bit Ubuntu with Bazel using https://github.com/mjbots/rpi_bazel 
 
-# Requirements
-
-Some form of Linux such as Ubuntu 18.
-
-# Building for the Raspberry Pi doesn't work
+## Building for the Raspberry Pi doesn't work
 
 This repository was created so the community can help me and the greater good build
 my project for the Raspberry Pi.
 
 # Why Bazel?
 
-Multi-platform C++ projects are common but are notoriously difficult to build. Bazel can fix this by making it easy for C++ developers to integrate Boost b2, CMake, and toolchain ecosystems. 
+Multi-platform C++ projects are common. However, they are notoriously difficult to build. Bazel can fix this by making it easy for C++ developers to integrate Boost b2, CMake, and toolchain ecosystems so that fast hardware can be utilized to quickly build shared libraries and executables that run on constrained systems such as the Raspberry Pi.
+
+# Requirements
+
+1. Some form of Linux such as Ubuntu 18
+2. Bazel 0.26.1 or later
 
 # If you don't want to install gcc
 
