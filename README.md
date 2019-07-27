@@ -12,9 +12,16 @@ This repository was created in the hope that the community can lift this boulder
 1. Boost shared libraries are successfully created for the host operating system but fails to create shared libraries for the Raspberry Pi
 2. CMake projects don't work when building for either the host or the Raspberry Pi
 
+## Issues
+
+1. https://github.com/bazelbuild/rules_foreign_cc/issues/297
+2. https://github.com/mjbots/rpi_bazel/issues/3
+
 # Why Bazel?
 
 Multi-platform C++ projects are common. However, they are notoriously difficult to build. Bazel can fix this by making it easy for C++ developers to integrate Boost b2, CMake, and toolchain ecosystems so that fast hardware can be utilized to quickly build shared libraries and executables that run on constrained systems such as the Raspberry Pi.
+
+My ultimate goal is to support other platforms than the Raspberry Pi with a similar approach to mjbots/rpi_bazel.
 
 # Requirements
 
@@ -48,9 +55,9 @@ bazel build --cpu=pi test
 ```
 
 ### Boost Failure
-boost/BUILD doesn't work even for the host platform unless this file specifies a toolset. clang is specified.
+boost/BUILD doesn't work even for the host platform unless this file specifies a toolset. Therefore, toolset=clang is used.
 
-Despite Boost appearing to build correctly, x86 libraries are built instead of ARM-compatible libraries. This can be verified using the 'file' command. See bazel/BUILD. Perhaps arm-clang should be specified as the toolset. I have tried many things. At any rate, the architecture (--cpu=pi) should affect the Boost build. The toolset should not be hard-coded. 
+Despite Boost appearing to build correctly, x86 libraries are built instead of ARM-compatible libraries. This can be verified using the 'file' command. See bazel/BUILD. Perhaps arm-clang should be specified as the toolset. I have tried many things. At any rate, the architecture (--cpu=pi) should affect the Boost build. The toolset should not be hard-coded. I tried hard-coding toolset=arm-clang instead, but was still unsuccessful.
 
 ```bash
 ld.lld: error: bazel-out/armeabihf-fastbuild/bin/_solib_armeabihf/_U_S_Sboost_Clog___Uboost_Slog_Slib/libboost_atomic.so.1.65.0 is incompatible with armelf_linux_eabi
