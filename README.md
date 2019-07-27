@@ -19,7 +19,7 @@ This repository was created in the hope that the community can lift this boulder
 
 # Why Bazel?
 
-Multi-platform C++ projects are common. However, they are notoriously difficult to build. Bazel can fix this by making it easy for C++ developers to integrate Boost b2, CMake, and toolchain ecosystems so that fast hardware can be utilized to quickly build shared libraries and executables that run on constrained systems such as the Raspberry Pi.
+Multi-platform C++ projects are common. However, they are difficult to build. Bazel can fix this by making it easy for C++ developers to integrate Boost b2, CMake, and toolchain ecosystems so that fast hardware can be utilized to quickly build shared libraries and executables that run on constrained systems such as the Raspberry Pi.
 
 My ultimate goal is to support other platforms than the Raspberry Pi with a similar approach to mjbots/rpi_bazel.
 
