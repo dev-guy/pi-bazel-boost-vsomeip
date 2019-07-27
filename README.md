@@ -55,9 +55,11 @@ bazel build --cpu=pi test
 ```
 
 ### Boost Failure
-boost/BUILD doesn't work even for the host platform unless this file specifies a toolset. Therefore, toolset=clang is used.
+boost/BUILD doesn't work even for the host platform unless this file specifies a toolset. Therefore, --with-toolset=clang is used.
 
-Despite Boost appearing to build correctly, x86 libraries are built instead of ARM-compatible libraries. This can be verified using the 'file' command. See bazel/BUILD. Perhaps arm-clang should be specified as the toolset. I have tried many things. At any rate, the architecture (--cpu=pi) should affect the Boost build. The toolset should not be hard-coded. I tried hard-coding toolset=arm-clang instead, but was still unsuccessful.
+Despite Boost appearing to build correctly, x86 shared libraries are built instead of ARM-compatible libraries. This can be verified using the 'file' command. I tried hard-coding toolset=arm-clang instead, but was still unsuccessful.
+
+At any rate, the architecture (--cpu=pi) should affect the Boost build. The specified toolset should not be hard-coded. 
 
 ```bash
 ld.lld: error: bazel-out/armeabihf-fastbuild/bin/_solib_armeabihf/_U_S_Sboost_Clog___Uboost_Slog_Slib/libboost_atomic.so.1.65.0 is incompatible with armelf_linux_eabi
