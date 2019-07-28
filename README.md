@@ -13,6 +13,8 @@ Unfortunately, mjbots/rpi_bazel doesn't play nice with bazelbuild/rules_foreign_
 
 *Can we power lift this boulder together?*
 
+We need to fix the following two issues:
+
 1. Boost shared libraries are successfully created for the host operating system but fails to create shared libraries for the Raspberry Pi
 2. CMake projects don't work when building for either the host or the Raspberry Pi
 
@@ -23,14 +25,19 @@ Unfortunately, mjbots/rpi_bazel doesn't play nice with bazelbuild/rules_foreign_
 
 # Why Bazel?
 
-Multi-platform C++ projects are common. However, they are difficult to build. Bazel can fix this by making it easy for C++ developers to integrate Boost b2, CMake, and toolchain ecosystems so that fast hardware can be utilized to quickly build shared libraries and executables that run on constrained systems such as the Raspberry Pi.
+Multi-platform C++ projects are common. However, they are difficult to build. Bazel can fix this by making it easy for C++ developers to integrate the Bazel, Boost:b2, CMake, and toolchain ecosystems so that a single machine containing fast hardware can target multiple platforms including constrained systems such as the Raspberry Pi, thus avoiding complex orchestration and software installation on target platforms.
 
-My ultimate goal is to support other platforms than the Raspberry Pi with a similar approach to mjbots/rpi_bazel.
+My ultimate goal is to support other platforms than the Raspberry Pi with a similar approach to mjbots/rpi_bazel, such as [IMX Linux](https://www.nxp.com/support/developer-resources/run-time-software/linux-software-and-development-tools/embedded-linux-for-i.mx-applications-processors:IMXLINUX).
+
+Here is some additional reading on this topic:
+
+- [Bazel Toolchains](https://docs.bazel.build/versions/master/toolchains.html)
+- [Configuring bazel to cross compile for the Raspberry Pi 3](https://jpieper.com/2018/10/28/configuring-bazel-to-cross-compile-for-the-raspberry-pi-3)
 
 # Requirements
 
 1. Some form of Linux such as Ubuntu 18
-2. Bazel 0.26.1 or later
+2. Bazel 0.26.1 or later. Version 0.28.1 seems to work OK.
 
 # If you don't want to install gcc
 
