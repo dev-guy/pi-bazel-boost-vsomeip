@@ -7,7 +7,7 @@ This project attempts to demonstrate the following:
 
 # The Problem
 
-[A similar project](https://github.com/dev-guy/vsomeip-bazel) works on Ubuntu. I want to build that project for the Raspberry Pi, but on Ubuntu because it's faster and more convenient. mjbots/rpi_bazel to the rescue!
+[A similar project](https://github.com/dev-guy/vsomeip-bazel) works on x86 Ubuntu. I want to build that project for the Raspberry Pi, but on Ubuntu because it's faster and more convenient. mjbots/rpi_bazel to the rescue!
 
 Unfortunately, mjbots/rpi_bazel doesn't play nice with bazelbuild/rules_foreign_cc. As demonstrated by this project, not even the Ubuntu build works. Let's fix it!
 
