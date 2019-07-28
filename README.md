@@ -2,12 +2,16 @@
 
 This project attempts to demonstrate the following:
 
-1. Building Boost (1.65) shared libraries, Google Test, and a CMake-based library (GENIVI/vsomeip) with Bazel, via https://github.com/bazelbuild/rules_foreign_cc 
-2. Targeting the above for the Raspberry P using a different (preferably faster) platform such as Ubuntu, via https://github.com/mjbots/rpi_bazel 
+1. Building Boost (1.65) shared libraries, Google Test, and a CMake-based library (GENIVI/vsomeip) with Bazel, via https://github.com/bazelbuild/rules_foreign_cc
+2. Targeting the above for the Raspberry Pi using a different (preferably faster) platform such as Ubuntu, via https://github.com/mjbots/rpi_bazel 
 
-# Problems
+# The Problem
 
-This repository was created in the hope that the community can lift this boulder together.
+[A similar project](https://github.com/dev-guy/vsomeip-bazel) works on Ubuntu. I want to build that project for the Raspberry Pi, but on Ubuntu because it's faster and more convenient. mjbots/rpi_bazel to the rescue!
+
+Unfortunately, mjbots/rpi_bazel doesn't play nice with bazelbuild/rules_foreign_cc. As demonstrated by this project, not even the Ubuntu build works. Let's fix it!
+
+*Can we power lift this boulder together?*
 
 1. Boost shared libraries are successfully created for the host operating system but fails to create shared libraries for the Raspberry Pi
 2. CMake projects don't work when building for either the host or the Raspberry Pi
