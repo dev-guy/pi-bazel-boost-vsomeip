@@ -2,8 +2,8 @@
 
 This project attempts to demonstrate the following:
 
-1. Building Boost (1.65) shared libraries, Google Test, and a CMake-based library (GENIVI/vsomeip) with Bazel, via https://github.com/bazelbuild/rules_foreign_cc
-2. Targeting the above for the Raspberry Pi using a different (preferably faster) platform such as Ubuntu, via https://github.com/mjbots/rpi_bazel 
+1. Building Boost (1.65) shared libraries, Google Test, and a CMake-based library (GENIVI/vsomeip) with Bazel, via [bazelbuild/rules_foreign_cc](https://github.com/bazelbuild/rules_foreign_cc)
+2. Targeting the above for the Raspberry Pi using a different (preferably faster) platform such as Ubuntu, via [mjbots/rpi_bazel](https://github.com/mjbots/rpi_bazel)
 
 # The Problem
 
