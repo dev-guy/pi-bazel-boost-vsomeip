@@ -4,7 +4,7 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 
 # Raspberry Pi (begin)
-# This also sets up clang
+# This also sets up --compiler=clang
 load("//tools/workspace:default.bzl", "add_default_repositories")
 
 add_default_repositories()
