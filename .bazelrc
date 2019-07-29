@@ -2,4 +2,4 @@ import tools/bazel.rc
 
 startup 
 
-build --cxxopt='-std=c++11' --compiler=clang
+build --cxxopt='-std=c++11' --compiler=clang --spawn_strategy=standalone
