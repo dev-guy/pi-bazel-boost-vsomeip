@@ -25,9 +25,9 @@ We need to fix the following two issues:
 
 # Why Bazel?
 
-Multi-platform C++ projects are common. However, they are difficult to build. Bazel can fix this by making it easy for C++ developers to integrate the Bazel, Boost:b2, CMake, and toolchain ecosystems so that a single machine containing fast hardware can target multiple platforms including constrained systems such as the Raspberry Pi, thus avoiding complex orchestration and software installation on target platforms.
+Multi-platform C++ projects are common. However, they are difficult to build. Bazel can fix this by making it easy for C++ developers to integrate the Bazel, Boost:b2, CMake, and toolchain ecosystems so that a single machine containing fast hardware and a lot of RAM can target multiple platforms including constrained systems such as the Raspberry Pi, thus avoiding complex orchestration and software installation on target platforms.
 
-My ultimate goal is to support other platforms than the Raspberry Pi with a similar approach to mjbots/rpi_bazel, such as [IMX Linux](https://www.nxp.com/support/developer-resources/run-time-software/linux-software-and-development-tools/embedded-linux-for-i.mx-applications-processors:IMXLINUX). I admit that I have no idea how to do this. Today, rpi_bazel is black magic to me. I either want to learn or someone else needs to step up and do the same for more platforms, particularly embedded platforms that need C++. All other types of hardware can and should run [memory-safe code](https://en.wikipedia.org/wiki/Memory_safety).
+My ultimate goal is to support other platforms in addition to the Raspberry Pi with a similar approach to mjbots/rpi_bazel, such as [IMX Linux](https://www.nxp.com/support/developer-resources/run-time-software/linux-software-and-development-tools/embedded-linux-for-i.mx-applications-processors:IMXLINUX). I admit that I have no idea how to do this. Today, rpi_bazel is black magic to me. I either want to learn or someone else needs to step up and do the same for more platforms, particularly embedded platforms that need C++. All other types of hardware can and should run [memory-safe code](https://en.wikipedia.org/wiki/Memory_safety).
 
 Know your customer, Bazel evangelists!
 
